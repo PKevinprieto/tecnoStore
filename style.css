@@ -40,7 +40,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 4px outset #ea00ff;
+  border-bottom: 1px outset #ea00ff;
   border-radius: 60px;
 }
 
@@ -390,7 +390,7 @@ main {
 
 @media (min-width: 480px) and (max-width: 767px) {
   .prueba {
-    width: 70%;
+    width: 90%;
     justify-content: flex-start;
     align-items: center;
   }
@@ -400,6 +400,9 @@ main {
   }
 
   .title2 h2 {
+    font-size: 1.8em;
+  }
+  .title h2 {
     font-size: 1.8em;
   }
 }
@@ -455,8 +458,12 @@ main {
   }
 }
 
+@media (min-width: 768px) and (max-width: 900px) {
+  title2 {
+    width: 80%;
+  }
+}
 /* ========================= MOBILE ========================= */
-
 @media (max-width: 480px) {
   .cards {
     display: grid;
