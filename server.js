@@ -38,11 +38,11 @@ app.post("/crear-preferencia", async (req, res) => {
         items,
         external_reference: orderId,
         back_urls: {
-          success: "http://127.0.0.1:5500/?status=success",
-          failure: "http://127.0.0.1:5500/?status=failure",
-          pending: "http://127.0.0.1:5500/?status=pending",
+          success: "https://tecnostorekp.netlify.app/?status=success",
+          failure: "https://tecnostorekp.netlify.app/?status=failure",
+          pending: "https://tecnostorekp.netlify.app/?status=pending",
         },
-        // auto_return: "approved", ACTIVAR CUANDO SUBA A  UN DOMINIO
+        auto_return: "approved",
       },
     });
 
