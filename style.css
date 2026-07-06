@@ -641,3 +641,134 @@ main {
     width: 60%;
   }
 }
+#order-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+/* Caja del mensaje */
+#order-modal .modal-content {
+  width: 90%;
+  max-width: 500px;
+
+  background: #1b1b1b;
+  border: 2px solid #00bcd4;
+  border-radius: 18px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  color: white;
+
+  box-shadow: 0 0 30px rgba(0, 188, 212, 0.35);
+
+  animation: aparecer 0.35s ease;
+}
+
+/* Título */
+#order-modal h2 {
+  color: #00e5ff;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+/* Número de pedido */
+#order-number {
+  color: #bdbdbd;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+/* Lista */
+#order-products {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+#order-products li {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 12px 15px;
+
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+
+  background: #2b2b2b;
+
+  font-size: 17px;
+}
+
+/* Total */
+#order-total {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #00e676;
+}
+
+/* Botón */
+#close-order {
+  margin-top: 30px;
+
+  padding: 12px 30px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  background: #00bcd4;
+  color: white;
+
+  transition: 0.25s;
+}
+
+#close-order:hover {
+  background: #0097a7;
+  transform: scale(1.05);
+}
+
+/* Animación */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.success-icon {
+  width: 90px;
+  height: 90px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 50%;
+
+  background: #00e676;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 50px;
+
+  box-shadow: 0 0 20px rgba(0, 230, 118, 0.45);
+}

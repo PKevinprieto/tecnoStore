@@ -4,7 +4,7 @@ const productos = [
 
     image: "celulares/crop_i17pm.png",
 
-    price: "$2.000,00",
+    price: "$1.500,00",
     quantity: 1,
 
     specs: [

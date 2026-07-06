@@ -242,18 +242,53 @@ function actualizarTotal() {
   cartTotal.textContent = total.toFixed(2);
 }
 const btnComprar = document.querySelector("#btn-comprar");
-btnComprar.addEventListener("click", () => {
+
+btnComprar.addEventListener("click", async () => {
   if (carritoList.children.length === 0) {
     mostrarToast("El carrito está vacío.");
     return;
-  } else {
-    mostrarToast("¡Gracias por tu compra!");
+  }
 
-    carritoList.innerHTML = "";
-    cartTotal.textContent = "0.00";
-    window.open("https://www.paypal.com/uy/home", "_blank");
+  const items = obtenerItemsCarrito();
+  localStorage.setItem(
+    "ultimaCompra",
+    JSON.stringify({
+      productos: obtenerItemsCarrito(),
+      total: cartTotal.textContent,
+    }),
+  );
+
+  try {
+    const response = await fetch("http://localhost:3000/crear-preferencia", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ items }),
+    });
+
+    const data = await response.json();
+
+    window.location.href = data.init_point;
+  } catch (error) {
+    console.error(error);
+    mostrarToast("Error al iniciar el pago.");
   }
 });
+function obtenerItemsCarrito() {
+  const items = [];
+
+  carritoList.querySelectorAll("li").forEach((item) => {
+    items.push({
+      title: item.dataset.name,
+      quantity: parseInt(item.querySelector(".quantity").textContent),
+      unit_price: parseFloat(item.dataset.price),
+      currency_id: "ARS",
+    });
+  });
+
+  return items;
+}
 const cartCounter = document.querySelector("#cart-counter");
 function actualizarContador() {
   let total = 0;
@@ -265,4 +300,43 @@ function actualizarContador() {
   cartCounter.textContent = total;
 
   cartCounter.style.display = total === 0 ? "none" : "flex";
+}
+const params = new URLSearchParams(window.location.search);
+const status = params.get("status");
+
+if (status === "success") {
+  mostrarToast("¡Pago realizado con éxito!");
+
+  carritoList.innerHTML = "";
+  cartTotal.textContent = "0.00";
+  actualizarContador();
+  const compra = JSON.parse(localStorage.getItem("ultimaCompra"));
+
+  if (compra) {
+    document.querySelector("#order-products").innerHTML = "";
+
+    compra.productos.forEach((producto) => {
+      document.querySelector("#order-products").innerHTML += `
+        <li>${producto.title} x${producto.quantity}</li>
+      `;
+    });
+
+    document.querySelector("#order-total").textContent =
+      `Total: $${compra.total}`;
+
+    document.querySelector("#order-number").textContent =
+      `Pedido #${Date.now()}`;
+
+    document.querySelector("#order-modal").style.display = "block";
+
+    localStorage.removeItem("ultimaCompra");
+  }
+}
+
+if (status === "failure") {
+  mostrarToast("El pago fue rechazado.");
+}
+
+if (status === "pending") {
+  mostrarToast("El pago quedó pendiente.");
 }
