@@ -259,13 +259,16 @@ btnComprar.addEventListener("click", async () => {
   );
 
   try {
-    const response = await fetch("http://localhost:3000/crear-preferencia", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      "https://tecno-store-api.onrender.com/crear-preferencia",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ items }),
       },
-      body: JSON.stringify({ items }),
-    });
+    );
 
     const data = await response.json();
 
