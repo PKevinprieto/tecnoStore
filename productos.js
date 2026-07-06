@@ -4,7 +4,7 @@ const productos = [
 
     image: "celulares/crop_i17pm.png",
 
-    price: "$1.500,00",
+    price: "500",
     quantity: 1,
 
     specs: [
@@ -21,7 +21,7 @@ const productos = [
 
     image: "celulares/crop_i16p.png",
 
-    price: "$1.500,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -38,7 +38,7 @@ const productos = [
 
     image: "celulares/crop_i15pm.png",
 
-    price: "$1.500,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -55,7 +55,7 @@ const productos = [
 
     image: "celulares/ipadpro.png",
 
-    price: "$1.000,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -72,7 +72,7 @@ const productos = [
 
     image: "celulares/airpodsmax2.png",
 
-    price: "$800,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -90,7 +90,7 @@ const productos = [
 
     image: "celulares/crop_i17b.png",
 
-    price: "$2.000,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -107,7 +107,7 @@ const productos = [
 
     image: "celulares/ipadair.png",
 
-    price: "$1.600,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -125,7 +125,7 @@ const productos = [
 
     image: "celulares/crop_i16b.png",
 
-    price: "$1.500,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -142,7 +142,7 @@ const productos = [
 
     image: "celulares/pruebamacbook.png",
 
-    price: "$3.000,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -160,7 +160,7 @@ const productos = [
 
     image: "celulares/macbookair.png",
 
-    price: "$2.600,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -177,7 +177,7 @@ const productos = [
 
     image: "celulares/crop_i16pm.png",
 
-    price: "$1.500,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -194,7 +194,7 @@ const productos = [
 
     image: "celulares/ps5.png",
 
-    price: "$1.500,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -212,7 +212,7 @@ const productos = [
 
     image: "celulares/crop_i15p.png",
 
-    price: "$1.500,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -229,7 +229,7 @@ const productos = [
 
     image: "celulares/crop_i15b.png",
 
-    price: "$1.200,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -246,7 +246,7 @@ const productos = [
 
     image: "celulares/smartwatchse3.png",
 
-    price: "$1.200,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -263,7 +263,7 @@ const productos = [
 
     image: "celulares/crop_i17p.png",
 
-    price: "$2.000,00",
+    price: "1000",
     quantity: 1,
 
     specs: [
@@ -280,7 +280,7 @@ const productos = [
 
     image: "celulares/ipadmini.png",
 
-    price: "$1.300,00",
+    price: "1000",
     quantity: 1,
 
     specs: [

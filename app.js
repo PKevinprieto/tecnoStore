@@ -40,10 +40,10 @@ function createCard(product) {
     } else {
       const listItem = document.createElement("li");
       listItem.setAttribute("data-name", product.name);
-
-      const price = parseFloat(
-        product.price.replace("$", "").replace(".", "").replace(",", "."),
-      );
+      const price = product.price;
+      // const price = parseFloat(
+      //   product.price.replace("$", "").replace(".", "").replace(",", "."),
+      // );
       listItem.dataset.price = price;
 
       listItem.innerHTML = `
@@ -159,7 +159,11 @@ function createImage(product) {
 function createPrice(product) {
   const price = document.createElement("span");
   price.classList.add("price");
-  price.textContent = product.price;
+  price.textContent = new Intl.NumberFormat("es-AR", {
+    style: "currency",
+    currency: "ARS",
+  }).format(product.price);
+  // price.textContent = product.price;
   return price;
 }
 function createListItem(spec) {
